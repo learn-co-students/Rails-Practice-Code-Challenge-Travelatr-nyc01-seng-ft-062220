@@ -1,0 +1,18 @@
+<%if flash[:list_errors]%>
+    <h2> Oh no! We ran into some issues with your inputs...</h2>
+    <%flash[:list_errors].each do |error| %>
+       <li> <%= error%> </li>
+    <%end%>
+<%end%><br>
+
+  <%= form_with model:@post do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+  <%= f.label :content %>
+  <%= f.text_field :content %><br>
+  <%= f.label :likes %>
+  <%= f.number_field :likes, {min: 0, max: 1} %><br>
+  <%= f.collection_select(:blogger_id, @bloggers, :id, :name) %><br>
+  <%= f.collection_select(:destination_id, @destinations, :id, :name) %><br>
+  <%= f.submit %>
+  <% end %>

@@ -1,0 +1,17 @@
+<h1> Destination Page </h1>
+
+<h2>Name: <%= @destination.name %><br></h2>
+<h2>Country: <%= @destination.country %><br></h2>
+
+<h3>Recent 5 Posts: </h3>
+<% @destination.recent_five.each do |post| %>
+   <li>Title: <%= link_to post.title, post_path(post)%> </li>
+   Time posted: <%= post.created_at%>
+<% end%> 
+<br>
+
+<p>Featured Post: </p> 
+<%= link_to @destination.featured_post.title, post_path(@destination.featured_post) %><br>
+Most Likes: <%= @destination.featured_post.likes %>
+<p>Average Blogger Age: <%= @destination.average_age %> </p> 
+
