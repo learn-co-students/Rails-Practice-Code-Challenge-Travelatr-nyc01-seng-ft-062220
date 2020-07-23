@@ -1,0 +1,19 @@
+<h1> Home Page </h1>
+<p>Name: <%= @blogger.name%></p>
+<p> Bio: <%= @blogger.bio %></p>
+<p>Age: <%= @blogger.age%></p>
+
+<h2>Top 5 Destination:</h2>
+<% @blogger.top_destination.each do |post| %>
+   <%= link_to post.destination.name, destination_path(post.destination)%><br>
+<% end%> 
+
+<h2> Featured Post </h2>
+<h3><%= link_to @blogger.featured_post.title, post_path(@blogger.featured_post) %></h3>
+
+<br>
+<h2> Your Posts </h2>
+<% @blogger.posts.each do |post|%>
+<p> Title: <%= link_to post.title, post_path(post) %>  </p>
+<p> Likes: <%= post.likes %> </p>
+<%end%>
