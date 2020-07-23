@@ -1,0 +1,29 @@
+<h1> POST SHOW PAGE </h1>
+
+<p>Title:</p>
+<p><%= @post.title %></p>
+
+<p>Content:</p>
+<p><%= @post.content %></p>
+
+
+<p>Author:</p>
+<p><%= link_to @post.blogger.name, blogger_path(@post.blogger) %></p>
+
+
+<p>Destination:</p>
+<p><%= link_to @post.destination.name, destination_path(@post.destination) %></p>
+
+<%= %>
+
+<%= %>
+
+<%= %>
+
+<%= %>
+
+<%= %>
+
+<%= %>
+
+<%= %>
