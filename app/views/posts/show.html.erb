@@ -1,0 +1,6 @@
+<h1><%= @post.title %></h1>
+<strong>Author Name:</strong><%= link_to @post.blogger.name, blogger_path(@post.blogger) %><br>
+<strong>Destination:</strong><%= link_to @post.destination.name, destination_path(@post.destination) %>
+<p><%= pluralize(@post.likes, "Like")%></p>
+
+<%= button_to "Like", post_likes_path(@post), method: :post %>
